@@ -616,7 +616,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   d2 = d.center(32, ' ');
 
   script.Print("**********************************");
-  script.Print("*             AOSPA-L            *");
+  script.Print("*       MechanicalAndroids       *");
   script.Print("*                                *");
   script.Print("*" + b2 + "*");
   script.Print("*" + d2 + "*");
