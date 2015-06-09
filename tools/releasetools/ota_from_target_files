@@ -1477,6 +1477,17 @@ endif;
     script.Unmount("/system")
     script.Mount("/system")
     system_diff.EmitExplicitTargetVerification(script)
+    
+  if block_based:
+    script.Print("Flashing SuperSU...")
+    common.ZipWriteStr(output_zip, "supersu/supersu.zip",
+                   ""+input_zip.read("SYSTEM/addon.d/UPDATE-SuperSU.zip"))
+    script.Mount("/system")
+    script.FlashSuperSU()
+
+  if block_based:
+    script.Unmount("/system")
+
 
   if OPTIONS.verify and vendor_diff:
     script.Print("Remounting and verifying vendor partition files...")
